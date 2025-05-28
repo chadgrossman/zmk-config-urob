@@ -63,6 +63,10 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+MAKE_HRM(hmrc, &kp, &comma_morph, KEYS_L THUMBS)
+MAKE_HRM(hmrd, &kp, &dot_morph,   KEYS_L THUMBS)
+MAKE_HRM(hmrq, &kp, &qexcl,       KEYS_L THUMBS)
+
 // Hack: Make HRM combos tap-only (cf, ZMK issue #544).
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
@@ -203,7 +207,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp A         &kp R         &kp S         &kp T         &kp G        ,  &kp M         &kp N         &kp E         &kp I         &kp O       ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LALT Z   &hml LCTRL X  &hml LGUI C   &hml LSHFT D  &kp V        ,  &kp K         &hmr RSHFT H  &comma_morph  &dot_morph    &qexcl      ,
+    &hml LALT Z   &hml LCTRL X  &hml LGUI C   &hml LSHFT D  &kp V        ,  &kp K         &hmr RSHFT H  &hmrc LGUI 0  &hmrd LCTRL 0 &hmrq LALT 0,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               &lt FUN RET   &lt_spc NAV 0,  MAGIC_SHIFT   SMART_NUM
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
